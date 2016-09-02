@@ -80,14 +80,15 @@ rangePrimes = filter prime
 goldbachTest :: (Integral a) => a -> a -> (a, a)
 goldbachTest x y
     | first && second = (x, y)
-    | otherwise       = goldbachTest (x-1) (y+1)
+    | otherwise       = goldbachTest (x-2) (y+2)
     where first  = prime x
           second = prime y
 
 goldbach :: (Integral a) => a -> (a, a)
 goldbach x
     | odd x     = error "Number must be even!"
-    | otherwise = goldbachTest half half
+    | odd half  = goldbachTest half half
+    | otherwise = goldbachTest (half-1) (half+1)
     where half = x `div` 2
 
 -- Problem 41 -  Given a range of integers by its lower and upper limit, print a list of all even
