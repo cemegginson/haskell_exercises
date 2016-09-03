@@ -19,7 +19,7 @@ elementAt xs x = xs !! x
 
 -- Problem 4 - Count the number of elements in a list
 elementCount :: [a] -> Int
-elementCount [] = 0
+elementCount []     = 0
 elementCount (_:xs) = 1 + elementCount xs
 
 -- Problem 5 - Reverse a list
@@ -39,9 +39,9 @@ palindromeTest xs
           center    = init (tail xs)
 
 -- Problem 7 - Flatten a nested list structure
-flatten :: [a] -> [a]
-flatten [] = []
-flatten xs
+-- flatten :: [a] -> [a]
+-- flatten [] = []
+-- flatten xs
 
 -- Problem 8 - Eliminate consecutive duplicates of list elements
 dedup :: (Eq a) => [a] -> [a]
@@ -79,13 +79,19 @@ dedup (x:xs)
 
 
 -- Problem 14 - Duplicate the elements of a list.
-
+duplicate :: [a] -> [a]
+duplicate []     = []
+duplicate (x:xs) = x : x : duplicate xs
 
 -- Problem 15 - Replicate the elements of a list a given number of times.
 
 
 -- Problem 16 - Drop every N'th element from a list.
-
+-- dropNth :: [a] -> Int -> [a]
+-- dropNth [] _ = []
+-- dropNth (x:xs) n
+--     |
+--     where nth =
 
 -- Problem 17 - Split a list into two parts; the length of the first part is given.
 -- Do not use any predefined predicates.
