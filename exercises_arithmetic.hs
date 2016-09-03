@@ -27,13 +27,13 @@ isCoprime x y
 -- Problem 34 - Calculate Euler's totient function phi(m).
 -- Euler's so-called totient function phi(m) is defined as the number of
 -- positive integers r (1 <= r < m) that are coprime to m.
-boolCoprime :: (Integral a) => a -> a -> a
-boolCoprime x y
+intCoprime :: (Integral a) => a -> a -> a
+intCoprime x y
     | isCoprime x y = 1
     | otherwise     = 0
 
 phi :: (Integral a) => a -> a
-phi x = foldl ((\x2 acc y -> acc + boolCoprime x2 y) x) 0 [1,2..x]
+phi x = foldl ((\x2 acc y -> acc + intCoprime x2 y) x) 0 [1,2..x]
 
 -- Problem 35 - Determine the prime factors of a given positive integer.
 -- Construct a flat list containing the prime factors in ascending order.
